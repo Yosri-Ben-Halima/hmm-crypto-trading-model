@@ -2,7 +2,7 @@
 
 An algorithmic trading model that uses a Hidden Markov Model (HMM) to identify latent market regimes in Bitcoin (BTC) price data and make strategic trading decisions.
 
-This project fetches historical BTC/USD data, engineers relevant financial features, and trains an HMM to uncover underlying market states (e.g., high-volatility bull market, low-volatility bear market, sideways movement). Based on the predicted state, it executes a trading strategy and backtests its performance against a simple "Buy and Hold" (HODL) baseline.
+This project fetches historical BTC/USDT data, engineers relevant financial features, and trains an HMM to uncover underlying market states (e.g., high-volatility bull market, low-volatility bear market, sideways movement). Based on the predicted state, it executes a trading strategy and backtests its performance against a simple "Buy and Hold" (HODL) baseline.
 
 ## Performance Dashboard
 
@@ -80,28 +80,19 @@ The primary way to run a full analysis is by using the Jupyter Notebook.
 2. **Open and run `main.ipynb`:**
     Open the `main.ipynb` file in your browser and run the cells sequentially. The notebook walks through the entire process from data loading to visualization.
 
-For more direct use, you can also utilize the individual scripts:
-
-- `train.py`: To train a new HMM model.
-- `predict.py`: To make predictions using a pre-trained model.
-
-## Configuration
-
-Key parameters for the model and backtester can be adjusted in `src/config.py`:
-
-- `INITIAL_CAPITAL`: The starting capital for the backtest.
-- `COMMISSION` / `SLIPPAGE`: Transaction cost assumptions.
-- `N_STATES`: The number of hidden states for the HMM to identify.
-- `START_DATE` / `END_DATE`: The date range for the historical data.
-
-## Technology Stack
-
-- **Data & Analysis:** Pandas, NumPy, SciPy
-- **Machine Learning:** scikit-learn
-- **Data Retrieval:** yfinance
-- **Visualization:** Plotly
-- **Utilities:** python-dotenv, logging
-
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+## Connect with Me
+
+Thank you for visiting my GitHub profile! Feel free to reach out if you have any questions or opportunities to collaborate. Let's connect and explore new possibilities together:
+
+[![GitHub](https://img.shields.io/badge/GitHub-Yosri--Ben--Halima-black?logo=github)](https://github.com/Yosri-Ben-Halima)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yosri%20Ben%20Halima-blue?logo=linkedin)](https://www.linkedin.com/in/yosri-ben-halima-3553a9221/)
+[![Facebook](https://img.shields.io/badge/Facebook-@Yosry%20Ben%20Hlima-navy?logo=facebook)](https://www.facebook.com/NottherealYxsry)
+[![Instagram](https://img.shields.io/badge/Instagram-@yosrybh-orange?logo=instagram)](https://www.instagram.com/yosrybh/)
+[![Email](https://img.shields.io/badge/Email-yosri.benhalima@ept.ucar.tn-white?logo=gmail)](mailto:yosri.benhalima@ept.ucar.tn)
+[![Personal Web Page](https://img.shields.io/badge/Personal%20Web%20Page-Visit%20Now-green?logo=googlechrome)](https://personal-web-page-yosribenhlima.streamlit.app/)
+[![Google Drive](https://img.shields.io/badge/My%20Resume-Click%20Here-red?logo=googledrive&logoColor=white)](https://drive.google.com/file/d/18xB1tlZUBWz5URSli_9kewEFZwZPz235/view?usp=sharing)
+[![PyPI](https://img.shields.io/badge/PyPI-yosri--ben--halima-pink?logo=pypi)](https://pypi.org/user/yosri-ben-halima/)
