@@ -1,5 +1,5 @@
 
-# 📈 Hidden Markov Model (HMM) Bitcoin Trading Strategy
+# Hidden Markov Model (HMM) Bitcoin Trading Strategy
 
 A quantitative trading framework that applies **Hidden Markov Models (HMMs)** to Bitcoin.  
 The goal is to identify hidden market regimes (e.g., bullish or bearish) and adapt trading decisions accordingly — instead of passively holding Bitcoin.  
