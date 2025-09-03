@@ -29,7 +29,7 @@ The pipeline includes:
 | P&L (%)              | **+51%**     | +23%       |
 | Max Drawdown (%)     | **-21%**     | -28%       |
 
-The HMM strategy delivered **higher risk-adjusted returns**, while **reducing drawdowns** compared to simply holding Bitcoin.  
+Over Jan-Aug 2025 backtest period, the HMM strategy delivered **higher risk-adjusted returns**, while **reducing drawdowns** compared to simply holding Bitcoin.  
 
 ---
 
