@@ -1,95 +1,69 @@
-# HMM Bitcoin Trading Model
 
-An algorithmic trading model that uses a Hidden Markov Model (HMM) to identify latent market regimes in Bitcoin (BTC) price data and make strategic trading decisions.
+# 📈 Hidden Markov Model (HMM) Bitcoin Trading Strategy
 
-This project fetches historical BTC/USDT data, engineers relevant financial features, and trains an HMM to uncover underlying market states (e.g., high-volatility bull market, low-volatility bear market, sideways movement). Based on the predicted state, it executes a trading strategy and backtests its performance against a simple "Buy and Hold" (HODL) baseline.
+A quantitative trading framework that applies **Hidden Markov Models (HMMs)** to Bitcoin.  
+The goal is to identify hidden market regimes (e.g., bullish or bearish) and adapt trading decisions accordingly — instead of passively holding Bitcoin.  
 
-## Performance Dashboard
+---
 
-The output is an interactive dashboard that visualizes the strategy's performance, allowing for in-depth analysis of its behavior over time.
+## Overview
 
-![Performance Dashboard](img/perf.png)
+This project combines **statistical modeling**, **machine learning**, and **backtesting** to evaluate whether regime-switching strategies can outperform a simple Buy & Hold (HODL) benchmark.  
 
-### Key Features
+The pipeline includes:
 
-- **Market Regime Detection:** Utilizes a Gaussian Hidden Markov Model to classify market behavior into distinct, latent states.
-- **Dynamic Strategy:** Allocates positions (Long/Short/Neutral) based on the predicted market regime.
-- **Comprehensive Backtesting:** Includes a backtesting engine that accounts for transaction costs (commission and slippage).
-- **Benchmark Comparison:** Directly compares the HMM strategy's performance against a HODL baseline.
-- **Interactive Visualization:** Generates a rich, interactive dashboard with Plotly, featuring:
-  - Candlestick price data.
-  - Log-scale equity curves for both the HMM strategy and HODL.
-  - Shaded regions indicating periods of outperformance or underperformance.
-- **Configurable Parameters:** Easily tune model and backtesting parameters in a central configuration file.
+- Data loading and feature engineering  
+- State calibration and HMM training  
+- Signal generation based on inferred regimes  
+- Backtesting with transaction costs  
+- Benchmarking against Buy & Hold  
+- Monte Carlo simulations for robustness  
 
-## How It Works
+---
 
-The model operates through a sequential pipeline:
+## Average Results (Monte-Carlo on Test Period)
 
-1. **Data Loading:** Fetches historical BTC/USD data using `yfinance`.
-2. **Feature Engineering:** Calculates key indicators like returns and volatility, which are used as inputs for the HMM.
-3. **HMM Training:** Trains a GaussianHMM from `scikit-learn` on the engineered features to learn the market states.
-4. **Signal Generation:** Predicts the current market state for each day and generates a trading signal (1 for Long, -1 for Short, 0 for Neutral).
-5. **Backtesting:** Simulates the execution of the trading signals, calculates returns, and builds the equity curves.
-6. **Visualization:** Plots the final results and metrics in the interactive dashboard.
+| Metric              | HMM Strategy  | Buy & Hold |
+|----------------------|--------------|------------|
+| Annualized Sharpe    | **1.71**     | 1.02       |
+| P&L (%)              | **+51%**     | +23%       |
+| Max Drawdown (%)     | **-21%**     | -28%       |
 
-## Getting Started
+The HMM strategy delivered **higher risk-adjusted returns**, while **reducing drawdowns** compared to simply holding Bitcoin.  
 
-Follow these instructions to set up and run the project locally.
+---
 
-### Prerequisites
+## Quick Start
 
-- Python 3.8+
-- Pip and a virtual environment tool (`venv`)
+Clone the repo and install dependencies:
 
-### Installation
+```bash
+git clone https://github.com/Yosri-Ben-Halima/hmm-crypto-trading-model.git
+cd hmm-crypto-trading-model
+pip install -r requirements.txt
+````
 
-1. **Clone the repository:**
+Run the Jupyter notebook for a full example:
 
-    ```sh
-    git clone https://github.com/your-username/hmm-btc-trading-model.git
-    cd hmm-btc-trading-model
-    ```
+```bash
+jupyter notebook main.ipynb
+```
 
-2. **Create and activate a virtual environment:**
+---
 
-    ```sh
-    python -m venv venv
-    # On Windows
-    .\venv\Scripts\activate
-    # On macOS/Linux
-    source venv/bin/activate
-    ```
+## ⚠️ Disclaimer
 
-3. **Install the required dependencies:**
+This project is for **educational and research purposes only**.
+It is **not investment advice** and should not be used for live trading.
 
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-### Usage
-
-The primary way to run a full analysis is by using the Jupyter Notebook.
-
-1. **Launch Jupyter Notebook:**
-
-    ```sh
-    jupyter notebook
-    ```
-
-2. **Open and run `main.ipynb`:**
-    Open the `main.ipynb` file in your browser and run the cells sequentially. The notebook walks through the entire process from data loading to visualization.
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+---
 
 ## Connect with Me
 
 Thank you for visiting my GitHub profile! Feel free to reach out if you have any questions or opportunities to collaborate. Let's connect and explore new possibilities together:
 
 [![GitHub](https://img.shields.io/badge/GitHub-Yosri--Ben--Halima-black?logo=github)](https://github.com/Yosri-Ben-Halima)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yosri%20Ben%20Halima-blue?logo=linkedin)](https://www.linkedin.com/in/yosri-ben-halima-3553a9221/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yosri%20Ben%20Halima-blue?logo=linkedin)](https://www.linkedin.com/in/yosri-benhalima/)
 [![Facebook](https://img.shields.io/badge/Facebook-@Yosry%20Ben%20Hlima-navy?logo=facebook)](https://www.facebook.com/NottherealYxsry)
 [![Instagram](https://img.shields.io/badge/Instagram-@yosrybh-orange?logo=instagram)](https://www.instagram.com/yosrybh/)
 [![Email](https://img.shields.io/badge/Email-yosri.benhalima@ept.ucar.tn-white?logo=gmail)](mailto:yosri.benhalima@ept.ucar.tn)
